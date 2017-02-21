@@ -22,6 +22,8 @@ class DonutChartContainer extends Component {
     //   width: 0
     // });
 
+    this.updateData = this.updateData.bind(this);
+
     this.state = {
       data: data
     };
@@ -46,7 +48,7 @@ class DonutChartContainer extends Component {
 
     ];
 
-    this.setState({ 'data': data });
+    this.setState({ data: data });
   }
 
   render () {
