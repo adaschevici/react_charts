@@ -1,8 +1,6 @@
 import React from 'react';
 import DonutChartContainer from '../DonutChart/donut_chart_container';
 
-import css from '../../../src/public/style.css';
-
 const ChartsView = function (props) {
   return (
     <div className="row">

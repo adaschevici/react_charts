@@ -2,7 +2,6 @@ import React from 'react';
 
 import DonutChartPathContainer from './donut_chart_path_container';
 import DonutChartLegendContainer from './donut_chart_legend_container';
-import css from '../../../src/public/style.css';
 
 const DonutChartView = function (props) {
   return (
