@@ -39,7 +39,7 @@ class DonutChartLegendContainer extends Component {
     const texts = this.getLegend();
     return (
       <DonutChartLegendView
-        transform={this.transform ? this.transform : ''}
+        transform={this.transform}
         texts={texts}
       />
     );

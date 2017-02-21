@@ -11,3 +11,5 @@ const DonutChartLegendView = function (props) {
     </g>
   );
 };
+
+export default DonutChartLegendView;
