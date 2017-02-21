@@ -33,7 +33,6 @@ class DonutChartPathContainer extends Component {
 
   render () {
     const paths = this.getPaths();
-    console.log(paths);
     return (
       <DonutChartPathView
         transform={this.transform}
