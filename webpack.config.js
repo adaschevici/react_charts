@@ -35,6 +35,8 @@ module.exports = {
         }
       },
       {
+        include: /src\/public/,
+
         loaders: ['style-loader', 'css-loader'],
         test: /\.css$/
       },
