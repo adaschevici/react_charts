@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import * as d3 from 'd3';
 
 import DonutChartView from './donut_chart_view';
-
+import css from '../../../src/public/style.css';
 
 class DonutChartContainer extends Component {
   constructor (props) {

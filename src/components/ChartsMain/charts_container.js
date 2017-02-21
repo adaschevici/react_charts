@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 
 import ChartsView from './charts_view';
 
+import css from '../../../src/public/style.css';
 
 class ChartsContainer extends Component {
   constructor (props) {

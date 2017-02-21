@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as d3 from 'd3';
 
-import DonutChartPathView from './donut_chart_paths_view';
+import DonutChartPathView from './donut_chart_path_view';
 
 class DonutChartPathContainer extends Component {
   constructor (props) {
