@@ -1,16 +1,9 @@
 import React from 'react';
+import DonutChartContainer from '../DonutChart/donut_chart_container';
 
 const ChartsView = function (props) {
   return (
-    <table>
-      <tbody>
-        <tr>
-          <th>Ancient Name</th>
-          <th>Superpower</th>
-        </tr>
-          {props.ancients ? props.ancients.map(props.renderItem) : <tr><td>'Loading'</td></tr>}
-      </tbody>
-    </table>
+    <DonutChartContainer id="testId" padAngle={0.03}/>
   );
 };
 

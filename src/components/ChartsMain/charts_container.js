@@ -17,7 +17,6 @@ class ChartsContainer extends Component {
 const mapStateToProps = (state) => {
   if (state.appReducer.ancientsList.length > 0) {
     return {
-      ancientsList: state.appReducer.ancientsList,
     };
   }
   return {};
