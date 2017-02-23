@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as d3 from 'd3';
 
 import DonutChartView from './donut_chart_view';
 
@@ -27,13 +26,7 @@ class DonutChart extends Component {
       data: data
     };
 
-    this.pie = d3.pie()
-      .value(function(d){ return d.count })
-      .padAngle(this.props.padAngle)
-      .sort(null);
 
-    this.color = d3.scaleOrdinal()
-      .range(['#68c8d7','#eccd63','#bb8cdd','#de6942','#52b36e','#bbc7d9']);
   }
 
   updateData () {
@@ -58,8 +51,6 @@ class DonutChart extends Component {
         height={this.props.height}
         updateData={this.updateData}
         data={this.state.data}
-        pie={this.pie}
-        color={this.color}
       />);
   }
 }
@@ -72,10 +63,6 @@ DonutChart.propTypes = {
 };
 
 const mapStateToProps = (state) => {
-  if (state.appReducer.ancientsList.length > 0) {
-    return {
-    };
-  }
   return {};
 };
 
