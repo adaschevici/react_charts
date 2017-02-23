@@ -52,6 +52,7 @@ class DonutChart extends Component {
         height={this.props.height}
         updateData={this.updateData}
         data={this.state.data}
+        padAngle={this.props.padAngle}
       />);
   }
 }
