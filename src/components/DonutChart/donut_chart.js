@@ -44,7 +44,6 @@ class DonutChart extends Component {
   }
 
   render () {
-    console.log(this.state.data);
     return (
       <DonutChartView
         id={this.props.id}

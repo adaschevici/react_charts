@@ -24,7 +24,6 @@ const renderPaths = function (props) {
 
   const transform = displayTransform(props);
 
-  console.log(props.pie(props.data));
   const paths = (props.pie(props.data)).map(function(d, i) {
     return (
       <path fill={props.color(i)} d={arc(d)} key={i} />
