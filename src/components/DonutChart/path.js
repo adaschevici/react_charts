@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as d3 from 'd3';
 
-import DonutChartPathView from './donut_chart_path_view';
+import PathView from './path_view';
 
-class DonutChartPathContainer extends Component {
+class Path extends Component {
   constructor (props) {
     super(props);
     const radius = this.props.height;
@@ -34,7 +34,7 @@ class DonutChartPathContainer extends Component {
   render () {
     const paths = this.getPaths();
     return (
-      <DonutChartPathView
+      <PathView
         transform={this.transform}
         paths={this.getPaths()}
       />
@@ -51,7 +51,7 @@ const mapDispatchToProps = (dispatch) => {
   }, dispatch);
 };
 
-DonutChartPathContainer.propTypes = {
+Path.propTypes = {
   width: React.PropTypes.number,
   height: React.PropTypes.number,
   data: React.PropTypes.array,
@@ -59,4 +59,4 @@ DonutChartPathContainer.propTypes = {
   color: React.PropTypes.func
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(DonutChartPathContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(Path);
