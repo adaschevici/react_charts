@@ -1,6 +1,6 @@
 import React from 'react';
 
-const DonutChartLegendView = function (props) {
+const LegendView = function (props) {
   const style = {
     visibility: 'visible'
   };
@@ -12,4 +12,4 @@ const DonutChartLegendView = function (props) {
   );
 };
 
-export default DonutChartLegendView;
+export default LegendView;

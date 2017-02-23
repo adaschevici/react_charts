@@ -5,7 +5,7 @@ import * as d3 from 'd3';
 
 import DonutChartView from './donut_chart_view';
 
-class DonutChartContainer extends Component {
+class DonutChart extends Component {
   constructor (props) {
     super(props);
     const data = [
@@ -64,7 +64,7 @@ class DonutChartContainer extends Component {
   }
 }
 
-DonutChartContainer.propTypes = {
+DonutChart.propTypes = {
   width: React.PropTypes.number,
   height: React.PropTypes.number,
   padAngle: React.PropTypes.number,
@@ -84,10 +84,10 @@ const mapDispatchToProps = (dispatch) => {
   }, dispatch);
 };
 
-DonutChartContainer.defaultProps = {
+DonutChart.defaultProps = {
   width: 450,
   height: 250,
   padAngle:0
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(DonutChartContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(DonutChart);

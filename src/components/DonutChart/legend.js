@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as d3 from 'd3';
 
-import DonutChartLegendView from './donut_chart_legend_view';
+import Legend from './legend_view';
 
-class DonutChartLegendContainer extends Component {
+class Legend extends Component {
   constructor (props) {
     super(props);
   }
@@ -39,7 +39,7 @@ class DonutChartLegendContainer extends Component {
     const texts = this.getLegend();
     const transform = "translate(" + (this.props.width / 2 + 80) + ",55)";
     return (
-      <DonutChartLegendView
+      <LegendView
         transform={transform}
         texts={texts}
       />
@@ -56,7 +56,7 @@ const mapDispatchToProps = (dispatch) => {
   }, dispatch);
 };
 
-DonutChartLegendContainer.propTypes = {
+Legend.propTypes = {
   width: React.PropTypes.number,
   height: React.PropTypes.number,
   data: React.PropTypes.array,
@@ -64,4 +64,4 @@ DonutChartLegendContainer.propTypes = {
   color: React.PropTypes.func
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(DonutChartLegendContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(Legend);

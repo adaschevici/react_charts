@@ -1,7 +1,7 @@
 import React from 'react';
 
-import DonutChartPathContainer from './donut_chart_path_container';
-import DonutChartLegendContainer from './donut_chart_legend_container';
+import Path from './path';
+import Legend from './legend';
 
 const DonutChartView = function (props) {
   return (
@@ -9,10 +9,10 @@ const DonutChartView = function (props) {
       <svg id={props.id} width={props.width}
         height={props.height} className="shadow" onClick={props.updateData}>
 
-        <DonutChartPathContainer width={props.width} height={props.height}
+        <Path width={props.width} height={props.height}
           pie={props.pie} color={props.color} data={props.data}/>
 
-        <DonutChartLegendContainer pie={props.pie} color={props.color} data={props.data}
+        <Legend pie={props.pie} color={props.color} data={props.data}
           width={props.width} height={props.height}/>
       </svg>
     </div>
