@@ -10,7 +10,6 @@ class Path extends Component {
   }
 
   render () {
-    debugger;
     return (
       <PathView
         pie={this.props.pie}
