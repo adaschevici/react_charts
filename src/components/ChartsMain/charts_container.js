@@ -4,14 +4,12 @@ import { bindActionCreators } from 'redux';
 
 import ChartsView from './charts_view';
 
+/* eslint-disable */
 import css from '../../../src/public/style.css';
+/* eslint-enable */
 
 class ChartsContainer extends Component {
-  constructor (props) {
-    super(props);
-  }
-
-  render () {
+  render() {
     return <ChartsView />;
   }
 }
@@ -24,6 +22,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
+  console.log(dispatch);
   return bindActionCreators({
   }, dispatch);
 };
