@@ -5,14 +5,9 @@ import { bindActionCreators } from 'redux';
 import LegendView from './legend_view';
 
 class Legend extends Component {
-  constructor (props) {
-    super(props);
-  }
 
-
-
-  render () {
-    const transform = "translate(" + (this.props.width / 2 + 80) + ",55)";
+  render() {
+    const transform = `translate(${((this.props.width / 2) + 80)},55)`;
     return (
       <LegendView
         transform={transform}
@@ -25,20 +20,21 @@ class Legend extends Component {
 }
 
 const mapStateToProps = (state) => {
+  console.log(state);
   return {};
 };
 
 const mapDispatchToProps = (dispatch) => {
+  console.log(dispatch);
   return bindActionCreators({
   }, dispatch);
 };
 
 Legend.propTypes = {
-  width: React.PropTypes.number,
-  height: React.PropTypes.number,
-  data: React.PropTypes.array,
-  pie: React.PropTypes.func,
-  color: React.PropTypes.func
+  width: PropTypes.number.isRequired,
+  data: PropTypes.arrayOf(PropTypes.object).isRequired,
+  pie: PropTypes.func.isRequired,
+  color: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Legend);
