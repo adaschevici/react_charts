@@ -47,7 +47,7 @@ const DonutChartView = (props) => {
 
 DonutChartView.propTypes = {
   width: React.PropTypes.number.isRequired,
-  height: React.PropTypes.numbe.isRequired,
+  height: React.PropTypes.number.isRequired,
   padAngle: React.PropTypes.number.isRequired,
   id: React.PropTypes.string.isRequired,
   chartType: React.PropTypes.string.isRequired,

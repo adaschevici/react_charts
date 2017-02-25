@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
@@ -14,11 +14,6 @@ class DonutChart extends Component {
       { name: 'Firefox', count: 9 },
       { name: 'Others', count: 6 },
     ];
-
-    // this.setState({
-    //   data: data,
-    //   width: 0
-    // });
 
     this.updateData = this.updateData.bind(this);
 
