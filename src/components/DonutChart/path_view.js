@@ -14,7 +14,7 @@ const displayTransform = (props) => {
   return transform;
 };
 
-const renderPaths = function (props) {
+const renderPaths = (props) => {
   const { innerRadius, outerRadius } = calculateRadius(props);
 
   const arc = d3.arc()
@@ -22,7 +22,7 @@ const renderPaths = function (props) {
     .innerRadius(innerRadius);
 
   const paths = (props.pie(props.data)).map((d, i) => (
-    <path fill={props.color(i)} d={arc(d)} key={i} />
+    <path fill={props.color(i)} d={arc(d)} key={`${i}_key`} />
     ),
   );
 

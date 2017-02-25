@@ -1,33 +1,31 @@
-import React from 'react';
-import * as d3 from 'd3';
+import React, { PropTypes } from 'react';
 
- const renderLegend = function (props) {
-    const texts = (props.pie(props.data)).map(function(d, i) {
-      const transform = "translate(10," + i * 30 + ")";
-      const rectStyle = {
-        fill: props.color(i),
-        stroke: props.color(i)
+const renderLegend = (props) => {
+  const texts = (props.pie(props.data)).map((d, i) => {
+    const transform = `translate(10,${i * 30})`;
+    const rectStyle = {
+      fill: props.color(i),
+      stroke: props.color(i),
+    };
 
-      };
+    const textStyle = {
+      fill: props.color(i),
+    };
 
-      const textStyle = {
-        fill: props.color(i)
-      };
+    return (
+      <g transform={transform} key={i}>
+        <rect width="20" height="20" style={rectStyle} rx="2" />
+        <text x="30" y="15" className="browser-legend" style={textStyle}>{d.data.name}</text>
+      </g>
+    );
+  });
 
-      return (
-        <g transform={transform} key={i}>
-          <rect width="20" height="20" style={rectStyle} rx="2" rx="2"/>
-          <text x="30" y="15" className="browser-legend" style={textStyle}>{d.data.name}</text>
-        </g>
-      );
-    });
+  return texts;
+};
 
-    return texts;
-  }
-
-const LegendView = function (props) {
+const LegendView = (props) => {
   const style = {
-    visibility: 'visible'
+    visibility: 'visible',
   };
 
   return (
@@ -35,6 +33,10 @@ const LegendView = function (props) {
       {renderLegend(props)}
     </g>
   );
+};
+
+LegendView.propTypes = {
+  transform: PropTypes.string.isRequired,
 };
 
 export default LegendView;
