@@ -2,9 +2,10 @@ import React from 'react';
 import * as d3 from 'd3';
 
 const calculateRadius = function (props) {
+  console.log(props.chartType);
   return {
     radius: props.height,
-    innerRadius: props.height/3.3,
+    innerRadius: props.chartType === 'pie' ? 0 : props.height/3.3,
     outerRadius: props.height/2
   };
 }

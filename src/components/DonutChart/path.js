@@ -17,6 +17,7 @@ class Path extends Component {
         color={this.props.color}
         height={this.props.height}
         width={this.props.width}
+        chartType={this.props.chartType}
       />
     );
   }
@@ -36,7 +37,8 @@ Path.propTypes = {
   height: React.PropTypes.number,
   data: React.PropTypes.array,
   pie: React.PropTypes.func,
-  color: React.PropTypes.func
+  color: React.PropTypes.func,
+  chartType: React.PropTypes.string
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Path);

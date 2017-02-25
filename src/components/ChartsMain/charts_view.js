@@ -14,7 +14,7 @@ const ChartsView = function (props) {
       <div className="row">
         <div className="col-xs-7">
           <div className="bottom-left">
-            <DonutChart id="testId" padAngle={0.03} />
+            <DonutChart id="testId" padAngle={0.03} chartType="pie" />
           </div>
         </div>
       </div>

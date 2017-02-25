@@ -5,14 +5,14 @@ import { bindActionCreators } from 'redux';
 import DonutChartView from './donut_chart_view';
 
 class DonutChart extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
     const data = [
       { name: 'IE', count: 40 },
       { name: 'Chrome', count: 32 },
       { name: 'Safari', count: 14 },
       { name: 'Firefox', count: 9 },
-      { name: 'Others', count: 6 }
+      { name: 'Others', count: 6 },
     ];
 
     // this.setState({
@@ -23,27 +23,25 @@ class DonutChart extends Component {
     this.updateData = this.updateData.bind(this);
 
     this.state = {
-      data: data
+      data,
     };
-
-
   }
 
-  updateData () {
+  updateData() {
     const data = [
       { name: 'IE', count: Math.random() },
       { name: 'Chrome', count: Math.random() },
       { name: 'Safari', count: Math.random() },
       { name: 'Firefox', count: Math.random() },
       { name: 'Others', count: Math.random() },
-      { name: 'Opera', count: Math.random() }
+      { name: 'Opera', count: Math.random() },
 
     ];
 
-    this.setState({ data: data });
+    this.setState({ data });
   }
 
-  render () {
+  render() {
     return (
       <DonutChartView
         id={this.props.id}
@@ -52,6 +50,7 @@ class DonutChart extends Component {
         updateData={this.updateData}
         data={this.state.data}
         padAngle={this.props.padAngle}
+        chartType={this.props.chartType}
       />);
   }
 }
@@ -60,14 +59,17 @@ DonutChart.propTypes = {
   width: React.PropTypes.number,
   height: React.PropTypes.number,
   padAngle: React.PropTypes.number,
-  id: React.PropTypes.string.isRequired
+  id: React.PropTypes.string.isRequired,
+  chartType: React.PropTypes.string.isRequired,
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = () => {
+  console.log('Mapping');
   return {};
 };
 
 const mapDispatchToProps = (dispatch) => {
+  console.log('Mapping');
   return bindActionCreators({
   }, dispatch);
 };
@@ -75,7 +77,7 @@ const mapDispatchToProps = (dispatch) => {
 DonutChart.defaultProps = {
   width: 450,
   height: 250,
-  padAngle:0
+  padAngle: 0,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(DonutChart);
