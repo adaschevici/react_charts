@@ -5,11 +5,8 @@ import { bindActionCreators } from 'redux';
 import PathView from './path_view';
 
 class Path extends Component {
-  constructor (props) {
-    super(props);
-  }
 
-  render () {
+  render() {
     return (
       <PathView
         pie={this.props.pie}
@@ -24,21 +21,24 @@ class Path extends Component {
 }
 
 const mapStateToProps = (state) => {
+  console.log('Map state');
+  console.log(state);
   return {};
 };
 
 const mapDispatchToProps = (dispatch) => {
+  console.log('Map dispatch');
   return bindActionCreators({
   }, dispatch);
 };
 
 Path.propTypes = {
-  width: React.PropTypes.number,
-  height: React.PropTypes.number,
-  data: React.PropTypes.array,
-  pie: React.PropTypes.func,
-  color: React.PropTypes.func,
-  chartType: React.PropTypes.string
+  width: React.PropTypes.number.isRequired,
+  height: React.PropTypes.number.isRequired,
+  data: React.PropTypes.arrayOf(PropTypes.object).isRequired,
+  pie: React.PropTypes.func.isRequired,
+  color: React.PropTypes.func.isRequired,
+  chartType: React.PropTypes.string.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Path);
