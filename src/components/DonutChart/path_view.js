@@ -22,7 +22,7 @@ const renderPaths = (props) => {
     .innerRadius(innerRadius);
 
   const paths = (props.pie(props.data)).map((d, i) => (
-    <path fill={props.color(i)} d={arc(d)} key={`${i}_key`} />
+    <path fill={props.color(i)} d={arc(d)} key={i} />
     ),
   );
 
