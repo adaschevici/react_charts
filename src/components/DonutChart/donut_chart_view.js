@@ -12,7 +12,7 @@ const DonutChartView = (props) => {
     .sort(null);
 
   const color = d3.scaleOrdinal()
-    .range(['#68c8d7', '#eccd63', '#bb8cdd', '#de6942', '#52b36e', '#bbc7d9']);
+    .range(['#a1d99b', '#6baed6', '#bb8cdd', '#de6942', '#52b36e', '#bbc7d9']);
 
   return (
     <div>
